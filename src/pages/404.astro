@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'chadDev - 404 Page not found.';
+const description = '404';
+const permalink = `${Astro.site.href}404`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="404">
+    <div class="container">
+        <h1>404: Page not found</h1>
+        <h1>(╯°□°)╯︵ ┻━┻</h1>
+    </div>
+</BaseLayout>
+
