@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'chadDev - About';
+const description = 'About me.';
+const permalink = `${Astro.site.href}about`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="about">
+  <div class="container">
+    <h1>About</h1>
+    <figure class="about-image">
+      <img src="/assets/haze-hand-writes-down-ideas.png" alt="Hand writes down ideas" width="330">
+      <figcaption>
+        Illustration by 
+        <a href="https://icons8.com/illustrations/author/RogqKjMRAQ79">xopolin</a> 
+        from 
+        <a href="https://icons8.com/illustrations">Ouch!</a>
+      </figcaption>
+    </figure>
+    <p>Hi, I'm <strong>Chad</strong>. I'm a software engineer in the Microsoft stack, and based in Central "Penn's Woods." I've been doing that for <i>a while</i> (my first full-time software job was Y2k changes on a mainframe), and most of that time I've been privileged to be part of the incredible <a href="https://rimdev.io" target="_blank" rel="noopener">RIMdev</a> team.</p>
+    <p>You can see some of my work on <a href="https://www.github.com/lightyeare" target="_blank">GitHub</a> with more to come.</p>
+    <p>Husband. Father. Proud Poppi 👨‍👧‍👧. Hunter. 🍅🥕🍓 Gardener, my wife does the 🌷🌹🌼</p>
+    <p>✝ Christ is King 👑</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-image {
+    float: right;
+    margin: -3em -7em 2em 2em;
+    max-width: 300px;
+  }
+
+  .about-image img {
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+  }
+
+  @media (max-width: 1020px) {
+    .about-image {
+      float: none;
+      margin: 0 auto 2em;
+    }
+  }
+</style>
