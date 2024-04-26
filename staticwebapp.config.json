@@ -4,8 +4,5 @@
         "rewrite": "/404",
         "statusCode": 404
       }
-    },
-	"platform": {
-		"apiRuntime": "node:18"
-	}
+    }
 }
