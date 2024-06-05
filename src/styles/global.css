@@ -204,7 +204,7 @@ td {
 
 .container {
   margin: 0 auto;
-  max-width: 42em;
+  max-width: 60em;
   width: 100%;
 }
 
@@ -268,6 +268,7 @@ input[name='theme-toggle'] {
 @media (max-width: 480px) {
   body {
     font-size: 14px;
+    width: 100vh;
   }
 
   p,
