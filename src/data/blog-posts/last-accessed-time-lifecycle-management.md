@@ -23,8 +23,10 @@ At this point I was battered and bruised, exhausted from my seeking, and ready t
 
 That returns [BlobProperties](https://learn.microsoft.com/en-us/dotnet/api/azure.storage.blobs.models.blobproperties?view=azure-dotnet) which contains the property `LastAccessed`. 
 
-<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3ofT5I53iCdlGUjzt6" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/am85-yes-winning-3ofT5I53iCdlGUjzt6">via GIPHY</a></p>
+![Happy Dance](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnZ0Z2Z5NHdxbDQ2cjlwNHJlaXc1eTdubDNtY3dhbWFyaXUzZ253biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ofT5I53iCdlGUjzt6/giphy.gif)
 
 Now I can do a little more testing with last accessed time in our Lifecycle Management policies. Soon we can set up some policies in production and start saving 💲💲. 
 
-> Note: Kudos to the Az Powershell team on their extremely helpful error messages. Check this out - not one but TWO specific suggestions to fix the problem! `Get-AzStorageBlob: Could not get the storage context. Please pass in a storage context with "-Context" parameter (can be created with New-AzStorageContext cmdlet), or set the current storage context with Set-AzCurrentStorageAccount cmdlet.` 
+> Note: Kudos to the Az Powershell team on their extremely helpful error messages. Check this out - not one but TWO specific suggestions to fix the problem! 
+>
+> `Get-AzStorageBlob: Could not get the storage context. Please pass in a storage context with "-Context" parameter (can be created with New-AzStorageContext cmdlet), or set the current storage context with Set-AzCurrentStorageAccount cmdlet.` 
