@@ -1,5 +1,5 @@
 ---
-title: A brief into to Azure Storage Lifecycle Management 🛠
+title: A brief into to Azure Storage Lifecycle Management
 publishDate: 04 June 2024
 description: Stuffing everything in Hot Blob Storage? Save money by implementing Lifecycle Management on your storage accounts. 
 ---
