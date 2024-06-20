@@ -13,7 +13,7 @@ All files already in the Storage Account when you enable access time will have a
 
 At this point I was battered and bruised, exhausted from my seeking, and ready to throw in the towel (ok, that may be a bit of an overdramatization). I figured I needed to get closer to the metal so I decided to see what Az Powershell could tell me. For my own future reference, and if it's helpful to you, here are the commands I used:
 
-```
+```csharp
 Connect-AzAccount // login and connect to a subscription
 
 Set-AzCurrentStorageAccount -ResourceGroupName "<resource group name of your storage account>" -Name "<name of storage account>" // sets the storage context
