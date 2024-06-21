@@ -1,0 +1,14 @@
+---
+title: Documenting ASP.NET Core APIs with Swagger
+publishDate: 24 April 2024
+description: Swagger does a great job documenting your ASP.NET Core APIs with Swagger. Make it better. 
+---
+
+
+_This post was originally published on the [RIMdev Blog](https://rimdev.io/documenting-aspnetcore-apis-with-swagger)_
+
+Nearly all of the APIs we create at Ritter are for consumption by our own applications. We regularly use [Swagger](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) as a tool for development and as a way for our Front End team to learn about the APIs as they are crafting the UI. Since we are a small team and any member of the FE team can just turn around and ask the BE team "Hey, what's this?" we don't spend too much, or any, time adding additional documentation to our endpoints and models other than what Swagger spits out by default.
+
+We now have the opportunity to share one of our APIs with a third party so we need to step up our documentation game. This particular API had a custom written [descriptor](https://github.com/ritterim/descriptor) package that was used to provide complete API documentation. However, when we upgraded it to ASP.NET Core 6.0 from .NET Framework a year ago, we decided that since third party users of the API never materialized we weren't going to upgrade the descriptor package since no one but us was using our API, right 🤣? Well, here we are, and it now makes more sense to simply leverage the variety of ways that Swagger offers to fully document an ASP.NET Core API.
+
+I'd like to briefly describe each that I found, provide examples and links for more research, and share any wins and limitations I found when testing them out. I'll then tell you where we are at currently and what additional work we would like to do. First, I'd like to clarify my use of "Swagger".

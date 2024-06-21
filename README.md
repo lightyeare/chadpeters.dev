@@ -1,4 +1,7 @@
-<p>Hi, I'm <strong>Chad</strong>. I'm a software engineer in the Microsoft stack, and based in Central "Penn's Woods." I've been doing that for <i>a while</i> (my first full-time software job was Y2k changes on a mainframe), and most of that time I've been privileged to be part of the incredible <a href="https://rimdev.io" target="_blank" rel="noopener">RIMdev</a> team.</p>
-    <p>You can see some of my work on <a href="https://www.github.com/lightyeare" target="_blank">GitHub</a> with more to come.</p>
-    <p>Husband. Father. Proud Poppi 👨‍👧‍👧. Hunter. 🍅🥕🍓 Gardener, my wife does the 🌷🌹🌼</p>
-    <p>✝ Christ is King 👑</p>
+Hi, I'm **Chad**. I'm a software engineer in the Microsoft stack, and based in central "Penn's Woods." I've been doing that for _a while_ (my first full-time software job was Y2k changes on a mainframe), and most of that time I've been privileged to be part of the incredible [RIMdev]("https://rimdev.io") team.
+
+You can see some of my work on [GitHub](https://www.github.com/lightyeare) with more to come.
+
+Husband. Father. Proud Poppi 👨‍👧‍👧. Hunter. 🍅🥕🍓 Gardener, my wife does the 🌷🌹🌼
+
+✝ Christ is King 👑
