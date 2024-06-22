@@ -4,8 +4,6 @@ publishDate: 27 June 2024
 description: How do you find an Azure Blob's last accessed time? Read on...
 ---
 
-import CodeMarkup from '../../components/code-markup.astro';
-
 _This post was originally published on the [RIMdev Blog](https://rimdev.io/last-accessed-time-lifecycle-management)_
 
 My granddaughter went through a period in her 2s where she liked to play hide and seek. Last week I found myself again playing hide and seek, but this time with an Azure storage blob's last accessed time. Don't tell my grandie, but it was a little harder to find the last accessed time than it was to find her 😆.
@@ -18,8 +16,8 @@ Since I had my storage account opened in the Azure portal I used the Storage bro
 
 At this point I was battered and bruised, exhausted from my seeking, and ready to throw in the towel (ok, that may be a bit of an overdramatization). I figured I needed to get closer to the metal so I decided to see what Az Powershell could tell me. For my own future reference, and if it's helpful to you, here are the commands I used:
 
-<CodeMarkup>
-```
+
+```csharp
 Connect-AzAccount // login and connect to a subscription
 
 Set-AzCurrentStorageAccount -ResourceGroupName "<resource group name of your storage account>" -Name "<name of storage account>" // sets the storage context
@@ -28,7 +26,7 @@ $blob = Get-AzStorageBlob -Blob "<name of blob>" -Container "<name of container 
 
 echo $blob.BlobClient.GetProperties().Value // show the properties and their values
 ```
-</CodeMarkup>
+
 
 That returns a [BlobProperties](https://learn.microsoft.com/en-us/dotnet/api/azure.storage.blobs.models.blobproperties?view=azure-dotnet) object which contains the property `LastAccessed`. 
 
