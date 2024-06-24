@@ -2,6 +2,7 @@
 title: Documenting ASP.NET Core APIs with Swagger
 publishDate: 24 April 2024
 description: Swagger does a great job documenting your ASP.NET Core APIs with Swagger. Make it better. 
+slug: documenting-aspnetcore-apis-with-swagger
 ---
 
 _This post was originally published on the [RIMdev Blog](https://rimdev.io/documenting-aspnetcore-apis-with-swagger)_

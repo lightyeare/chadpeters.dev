@@ -1,0 +1,11 @@
+---
+const { prevPost, nextPost } = Astro.props
+---
+<ul class="prevNextNav">
+    <li>
+{prevPost.frontmatter && <span>⏪  </span><a href={`/blog/${prevPost.frontmatter.slug}/`}>{prevPost.frontmatter.title}</a>}
+</li>
+<li>
+{nextPost.frontmatter && <a href={`/blog/${nextPost.frontmatter.slug}/`}>{nextPost.frontmatter.title}</a><span>  ⏩</span>}
+</li>
+</ul>

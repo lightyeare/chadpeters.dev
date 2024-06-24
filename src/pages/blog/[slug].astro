@@ -2,12 +2,24 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
+import {sortByDate} from '../../utils/sortByDate.js';
+import PrevNext from "../../components/prevNextNav.astro" // Importing the component
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../data/blog-posts/*.md');
-  return posts.map(p => ({
+  const numberOfPosts = posts.length // Total of all posts
+  return posts.sort(sortByDate).map((p,i) => ({
     params: { slug: p.file.split('/').pop().split('.').shift() },
-    props: { post: p },
+    props: { post: p,
+      prevPost: // Previous post
+        i + 1 === numberOfPosts // If the current post is the oldest
+          ? { frontmatter: ""}
+          : posts[i + 1],
+      nextPost: // Next post
+        i === 0 // If the current post is the newest
+          ? { frontmatter: "" }
+          : posts[i - 1],
+     },
   }));
 }
 
@@ -15,6 +27,7 @@ const { Content, frontmatter } = Astro.props.post;
 const { title, description, publishDate } = frontmatter;
 const { slug, readingTime } = getPostData(Astro.props.post);
 const permalink = `${Astro.site.href}blog/${slug}`;
+const { prevPost, nextPost } = Astro.props
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="blog">
@@ -27,7 +40,9 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     <article class="content">
       <Content />
     </article>
-    <hr />
+    <hr class="narrow"/>
+    <PrevNext {prevPost} {nextPost} />
+
     <Bio />
   </div>
 </BaseLayout>
@@ -51,5 +66,10 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   header hr {
     min-width: 100px;
     width: 30%;
+  }
+
+  .narrow{
+    min-width: 100px;
+    width: 45%;
   }
 </style>

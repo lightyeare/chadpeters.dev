@@ -2,9 +2,8 @@
 title: Hide and seek with Az Blob Last Accessed Time
 publishDate: 27 June 2024
 description: How do you find an Azure Blob's last accessed time? Read on...
+slug: last-accessed-time-lifecycle-management
 ---
-
-import CodeMarkup from '../../components/code-markup.astro';
 
 _This post was originally published on the [RIMdev Blog](https://rimdev.io/last-accessed-time-lifecycle-management)_
 
@@ -18,8 +17,7 @@ Since I had my storage account opened in the Azure portal I used the Storage bro
 
 At this point I was battered and bruised, exhausted from my seeking, and ready to throw in the towel (ok, that may be a bit of an overdramatization). I figured I needed to get closer to the metal so I decided to see what Az Powershell could tell me. For my own future reference, and if it's helpful to you, here are the commands I used:
 
-<CodeMarkup>
-```
+```csharp
 Connect-AzAccount // login and connect to a subscription
 
 Set-AzCurrentStorageAccount -ResourceGroupName "<resource group name of your storage account>" -Name "<name of storage account>" // sets the storage context
@@ -28,7 +26,6 @@ $blob = Get-AzStorageBlob -Blob "<name of blob>" -Container "<name of container 
 
 echo $blob.BlobClient.GetProperties().Value // show the properties and their values
 ```
-</CodeMarkup>
 
 That returns a [BlobProperties](https://learn.microsoft.com/en-us/dotnet/api/azure.storage.blobs.models.blobproperties?view=azure-dotnet) object which contains the property `LastAccessed`. 
 
@@ -39,3 +36,5 @@ Now I can do a little more testing with last accessed time in our lifecycle mana
 > Kudos to the Az Powershell team on their extremely helpful error messages. Check this out - not one but TWO specific suggestions to fix the problem! 
 >
 > `Get-AzStorageBlob: Could not get the storage context. Please pass in a storage context with "-Context" parameter (can be created with New-AzStorageContext cmdlet), or set the current storage context with Set-AzCurrentStorageAccount cmdlet.` 
+
+_This post was originally published on the [RIMdev Blog](https://rimdev.io/last-accessed-time-lifecycle-management)_

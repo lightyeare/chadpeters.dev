@@ -224,12 +224,12 @@ td {
   background-color: var(--theme-code-inline-bg);
 }
 
-.theme-toggle > label:focus-within {
+.theme-toggle>label:focus-within {
   outline: 2px solid transparent;
   box-shadow: 0 0 0 0.08em var(--theme-accent), 0 0 0 0.12em white;
 }
 
-.theme-toggle > label {
+.theme-toggle>label {
   color: var(--theme-code-inline-text);
   position: relative;
   display: flex;
@@ -252,6 +252,16 @@ input[name='theme-toggle'] {
   bottom: 0;
   left: 0;
   z-index: -1;
+}
+
+.prevNextNav {
+  list-style: none;
+  display: flex;
+  font-size: .98em;
+  gap: 1em;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0
 }
 
 @media (max-width: 1020px) {
