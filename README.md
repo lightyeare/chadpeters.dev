@@ -7,3 +7,7 @@ See my about page for my contact information.
 Husband. Father. Proud Poppi 👨‍👧‍👧. Hunter. 🍅🥕🍓 Gardener, my wife does the 🌷🌹🌼
 
 ✝ Christ is King 👑
+
+Template updates:
+- Updated bits of layout and styling
+- Implemented a blog pager at the bottom of the blog posts so you can move forward and backward through the posts
