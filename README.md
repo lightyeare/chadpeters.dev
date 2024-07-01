@@ -2,6 +2,8 @@ Hi, I'm **Chad**. I'm a software engineer in the Microsoft stack, and based in c
 
 You can see some of my work on [GitHub](https://www.github.com/lightyeare) with more to come.
 
+See my about page for my contact information.
+
 Husband. Father. Proud Poppi 👨‍👧‍👧. Hunter. 🍅🥕🍓 Gardener, my wife does the 🌷🌹🌼
 
 ✝ Christ is King 👑
