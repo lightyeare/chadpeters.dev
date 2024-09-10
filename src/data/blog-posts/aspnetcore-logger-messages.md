@@ -2,7 +2,7 @@
 title: ASP.NET Core Logger messages matter
 slug: aspnetcore-logger-messages
 publishDate: 25 July 2024
-description: Exploring how different types of ASP.NET Core Logger messages are logged. 
+description: A look at how different types of messages are logged in ASP.NET Core Logger.
 ---
 
 _This post was originally published on the [RIMdev Blog](https://rimdev.io/aspnetcore-logger-messages)_
