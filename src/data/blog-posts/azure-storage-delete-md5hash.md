@@ -1,13 +1,13 @@
 ---
-title: Delete MD5Hash from Azure Storage Blob using Azure CLI
+title: Delete MD5 Hash from Azure Storage Blob using Azure CLI
 slug: azure-storage-delete-md5hash
 publishDate: 23 October 2024
 description: Should you search first or read the docs first?
 ---
 
-I've been working on completing the project I talked about in my [last post.](https://chadpeters.dev/blog/remove-file-extension-from-string) WAV files get dropped into an Azure storage account and then we copy them to another account. After copying the files I check their MD5 hashes to confirm the copy. I noticed that some files have MD5 hashes, and some don't. I wanted to replicate this in our DEV environment for testing, but every time I uploaded a file Azure creates the MD5 hash.
+I've been working on completing the project I talked about in my [last post.](https://chadpeters.dev/blog/remove-file-extension-from-string) WAV files get dropped into an Azure storage account and then we copy them to another account. After copying the files I check their MD5 hashes to confirm the copy. I noticed that some files have MD5 hashes, and some don't. I wanted to replicate this in our DEV environment for testing, but every time I uploaded a file Azure created the MD5 hash.
 
-I found a number of search results that suggested various ways to accomplish this. These included using `--set` and `--remove` flags. `--remove` was touted as an "undocumented feature." 😂 I also tried various values for the `--content-md5` flag without happy results. After giving up on searching and then turning to the documentation I found the answer. 
+I found a number of search results that suggested various ways to delete the MD5 hash of a blob. These included using `--set` and `--remove` flags. `--remove` was touted as an "undocumented feature." 😂 I also tried various values for the `--content-md5` flag without happy results. After giving up on searching and then turning to the documentation I found the answer. 
 
 ```csharp
 az storage blob update --container-name <container_name> --name <blob_name> 
