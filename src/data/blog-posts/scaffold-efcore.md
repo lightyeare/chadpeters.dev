@@ -1,7 +1,7 @@
 ---
 title: Reverse Engineering your Database into your ASP.NET Core Project
 slug: reverse-engineering-efcore
-publishDate: 15 October 2024
+publishDate: 15 November 2024
 description: How do I get my database schema into my code?
 ---
 
