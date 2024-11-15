@@ -5,7 +5,7 @@ description: Stuffing everything in Hot Blob Storage? Save money by implementing
 slug: intro-to-lifecycle-management
 ---
 
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/storage-lifecycle-management)_
+_I originally published this on the [RIMdev Blog](https://rimdev.io/storage-lifecycle-management)_
 
 We've recently been taking a closer look at our Azure costs. One area we identified cost savings is in our Storage costs. All the data we store has a unique lifecycle. For example, some data gets created, read once, and then is never needed again. Some data has a 10-year storage retention policy but might never get accessed in that 10 years. Other data gets stored and read often. However, we store all this data in the Hot tier. We could realize significant storage cost savings by implementing Lifecycle Management on our storage accounts. Before we get started, click [here](https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview) if you need an introduction or refresher on blob access tiers.
 

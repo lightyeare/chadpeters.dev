@@ -5,7 +5,7 @@ publishDate: 25 July 2024
 description: A look at how different types of messages are logged in ASP.NET Core Logger.
 ---
 
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/aspnetcore-logger-messages)_
+_I originally published this on the [RIMdev Blog](https://rimdev.io/aspnetcore-logger-messages)_
 
 Recently I was reviewing some code and I noticed something that seemed a little strange 😕
 
@@ -68,5 +68,3 @@ My log message now appears in the LogManagement.AppExceptions table and I get mo
 It helped me to see this for myself in Log Analytics. If you've never seen this before either, hopefully it helped you too.
 
 If you want to see the source code for the sample app visit the [GitHub repo](https://github.com/lightyeare/AppInsightsLogging).
-
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/aspnetcore-logger-messages)_

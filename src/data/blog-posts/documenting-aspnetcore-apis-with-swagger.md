@@ -5,7 +5,7 @@ description: Swagger does a great job documenting your ASP.NET Core APIs with Sw
 slug: documenting-aspnetcore-apis-with-swagger
 ---
 
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/documenting-aspnetcore-apis-with-swagger)_
+_I originally published this on the [RIMdev Blog](https://rimdev.io/documenting-aspnetcore-apis-with-swagger)_
 
 Nearly all of the APIs we create at Ritter are for consumption by our own applications. We regularly use [Swagger](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) as a tool for development and as a way for our Front End team to learn about the APIs as they are crafting the UI. Since we are a small team and any member of the FE team can just turn around and ask the BE team "Hey, what's this?" we don't spend too much, or any, time adding additional documentation to our endpoints and models other than what Swagger spits out by default.
 
@@ -152,6 +152,3 @@ See also [Swashbuckle.AspNetCore configuration and customization](https://github
 There is still some work to do around handling our custom type that we are using on some of our request objects. I've even gotten a few ideas for that while doing this write up! We are also starting a small, simple "Documentation Standards" policy while we are taking the time to think about documentation. Like I said at the top, we don't often document our APIs, but if this effort does extend to other APIs it might be a good idea to have some things written down so we can keep our APIs consistent.
 
 I had to do a lot of googling to get to get these bits of information while researching how to leverage Swagger to document our ASP.NET CORE APIs. I couldn't find all of this information in one place, so if you are looking for ways to document your API with Swagger, hopefully you'll be able to save yourself some time. If there is anything I missed or stated inaccurately, please feel free to reach out to me. 👋🏻
-
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/documenting-aspnetcore-apis-with-swagger)_
-
