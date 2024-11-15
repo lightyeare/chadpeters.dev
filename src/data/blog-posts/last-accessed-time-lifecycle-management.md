@@ -5,7 +5,7 @@ description: How do you find an Azure Blob's last accessed time? Read on...
 slug: last-accessed-time-lifecycle-management
 ---
 
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/last-accessed-time-lifecycle-management)_
+_I originally published this on the [RIMdev Blog](https://rimdev.io/last-accessed-time-lifecycle-management)_
 
 My granddaughter went through a period in her 2s where she liked to play hide and seek. Last week I found myself again playing hide and seek, but this time with an Azure storage blob's last accessed time. Don't tell my grandie, but it was a little harder to find the last accessed time than it was to find her 😆.
 
@@ -36,5 +36,3 @@ Now I can do a little more testing with last accessed time in our lifecycle mana
 > Kudos to the Az Powershell team on their extremely helpful error messages. Check this out - not one but TWO specific suggestions to fix the problem! 
 >
 > `Get-AzStorageBlob: Could not get the storage context. Please pass in a storage context with "-Context" parameter (can be created with New-AzStorageContext cmdlet), or set the current storage context with Set-AzCurrentStorageAccount cmdlet.` 
-
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/last-accessed-time-lifecycle-management)_

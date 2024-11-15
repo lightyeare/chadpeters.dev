@@ -5,7 +5,7 @@ publishDate: 11 October 2024
 description: What's the 'best' way to remove a file extension from a file path string?
 ---
 
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/remove-file-extension-from-string)_
+_I originally published this on the [RIMdev Blog](https://rimdev.io/remove-file-extension-from-string)_
 
 This week I was working on a project that moves and archives file recordings and their accompanying XML meta data. I needed to remove the file extension from a file path stored as a string. The first thing I thought of was:
 
@@ -46,5 +46,3 @@ I found this paragraph in an [article exploring spans](https://learn.microsoft.c
 > Or take another example. You’re implementing an operation over System.String, such as a specialized parsing method. You’d likely expose a method that takes a string and provide an implementation that operates on strings. But what if you wanted to support operating over a subset of that string? String.Substring could be used to carve out just the piece that’s interesting to them, but that’s a relatively expensive operation, involving a string allocation and memory copy. You could, as mentioned in the array example, take an offset and a count, but then what if the caller doesn’t have a string but instead has a char[]? Or what if the caller has a char*, like one they created with stackalloc to use some space on the stack, or as the result of a call to native code? How could you write your parsing method in a way that didn’t force the caller to do any allocations or copies, and yet worked equally well with inputs of type string, char[] and char*?
 
 That was a fun diversion and an informative peek under the hood. Happy coding!
-
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/remove-file-extension-from-string)_

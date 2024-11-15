@@ -5,7 +5,7 @@ description: LINQ OrderBy and then Distinct won't give you the results you are e
 slug: linq-orderby-distinct
 ---
 
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/distinct-orderby-gotcha)_
+_I originally published this on the [RIMdev Blog](https://rimdev.io/distinct-orderby-gotcha)_
 
 > Update: Originally published in 2016 but still relevant as I ran across the issue again recently with a current version of .NET. They aren't likely to change the implementation of Distinct, are they? 😏
 
@@ -56,5 +56,3 @@ var query = (from plan in _context.PlanTable
 ## Conclusion
 
 Be careful when using `Distinct()` and `OrderBy()` on IQueryables. If you don't specify them in the correct order you may not get the results you expect.
-
-_This post was originally published on the [RIMdev Blog](https://rimdev.io/distinct-orderby-gotcha)_
