@@ -20,7 +20,7 @@ Since we weren't getting the right behavior, it's clear everything was not ok. I
 
 I ran SQL Query Profiler to capture the query that was being generate by this Linq query. The exact query wasn't important, but one thing I noticed was - it was using a LEFT JOIN to join Phones to Leads. 
 
-LEFT JOINs will return all Parent rows regardless of whether there are matching Child rows. After a bit of research, bouncing ideas off of a collegue and one console project using the latest version of Entity Framework Core later, I now understand what is happening with our query. 
+LEFT JOINs will return all Parent rows regardless of whether there are matching Child rows. After a bit of research, bouncing ideas off of collegues, and one console project using the latest version of Entity Framework Core, I now understand what is happening with our query. 
 
 When writing LINQ queries, you use `Include` to tell Entity Framework Core to construct a query that will bring back those included child records in the results as part of the Parent. If you don't use `Include`, the collections in your results will be empty. 
 
@@ -54,7 +54,8 @@ So what is the purpose of adding a `Where` clause to an `Include`? The `Where` c
 
 ```csharp
 var lead = db.Leads
-    .Where(lead => lead.Active && lead.Phones.Any(phone => phone.PhoneNumber==inboundPhone))
+	.Where(lead => lead.Active 
+		&& lead.Phones.Any(phone => phone.PhoneNumber==inboundPhone))
 	.Include(x => x.Phones.Where(phone => phone.Active))
 	.ToList();
 ```
@@ -72,7 +73,7 @@ Let's look at a sample data set. These are all the Leads joined to their Phones.
 | Eric	| 1	| 5551212 |	0 | 
 | Andy	| 0	| 5551212 |	1 | 
 
-When I run the query in the Database that gets generate from my Linq, I get these results when I use "5551212" as the inboundPhone:
+When I run the query in the Database that gets generated from my Linq, I get these results when I use "5551212" as the inboundPhone:
 
 | Lead.FirstName | Lead.Active | Phone.PhoneNumber | Phone.Active | 
 | :----------- | :---------- | :---------- | :---------- |
@@ -82,7 +83,7 @@ When I run the query in the Database that gets generate from my Linq, I get thes
 
 Let's compare the results to the sample data set:
 
-- Bob looks correct. The Lead is Active, the Phone number matches the inboundPhone, and that Phone is Active. We aren't returning Bob's Phone row where the PhoneNumber does not match the inboundPhone. 
+- Bob looks correct. The Lead is Active and that Phone is Active. We aren't returning Bob's Phone row where the PhoneNumber is not Active. 
 
 - Sally is in the results because the Lead is Active and she has a Phone Number that matches the inboundPhone. However, her Phone columns are NULL because the `Where` clause in the `Include` says we only want Phone rows that are Active. Even though her Phone row is Inactive, because the `Include` generates a LEFT JOIN, it is going to return the Lead whether or not there are Phone rows match what is in the `Include` `Where` clause.
 
@@ -96,8 +97,9 @@ We can re-write the query to give us the results that should be returned.
 
 ```csharp
 var lead = db.Leads
-    .Where(lead => lead.Active && lead.Phones.Any(phone => phone.PhoneNumber==inboundPhone && phone.Active))
-	.Include(p => p.Phones)
+	.Where(lead => lead.Active 
+		&& lead.Phones.Any(phone => phone.PhoneNumber==inboundPhone && phone.Active))
+	.Include(x => x.Phones)
 	.ToList();
 ```
 
@@ -114,15 +116,17 @@ If we don't want all of Bob's phone rows to be returned, and instead we only wan
  
 ```csharp
 var lead = db.Leads
-    .Where(lead => lead.Active && lead.Phones.Any(phone => phone.PhoneNumber==inboundPhone && phone.Active))
-	.Include(p => p.Phones.Where(phone => phone.PhoneNumber == inboundPhone && phone.Active));
+	.Where(lead => lead.Active 
+		&& lead.Phones.Any(phone => phone.PhoneNumber==inboundPhone && phone.Active))
+	.Include(x => x.Phones.Where(phone => phone.PhoneNumber == inboundPhone 
+		&& phone.Active));
 ```
 
-To be clear, we are now telling EF that:
+To be clear, we are now telling EF Core that:
 - Filter the Leads to only include Leads that are Active and have at least one Phone that matches the inboundPhone and is Active
 - When returning the Phones for each Lead, we only want you to return the Phones that match the inboundPhone and are Active
 
-Another fun thing you can do is use the `Include` to order your child collections.
+You can do additional actions on the collections that you `Include`. One is to order your child collections.
 
 ```csharp
 var lead = db.Leads
@@ -139,9 +143,9 @@ I'll leave you with one final note. One important thing to remember about Linq `
 var lead = db.Leads
     .Where(x=> x.Phones.Any(phone => phone.Active))
     .Select(l => l.FirstName)
-    .ToList();	
+    .ToList();
 ```
 
-There is no need to add `.Include(x=>x.Phone)` to my query since I am only going to work with the properties on the Lead. 
+There is no need to add `.Include(x => x.Phone)` to my query since I am only going to work with the properties on the Lead. 
 
 I hope this has been helpful in better understanding the purpose and usage of the Linq `Include`. 
